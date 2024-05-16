@@ -40,6 +40,30 @@ class Reptile(Animal):
     def eat(self):
         print("I eat bugs")
 
+class Employee():
+    def job(self):
+        print(self.job())
+
+class ZooKeeper(Employee):
+    def job(self):
+        print("I feed animals")
+
+class Veterinarian(Employee):
+    def job(self):
+        print("I heal animals")
+
+
+# Композиция
+class Zoo():
+    def __init__(self, animal, employee):
+        self.animal = animal
+        self.employee = employee
+
+    def add_habitat(self, animal, employee):
+        self.animal.append(animal, employee)
+
+    def remove_habitat(self, animal, employee):
+        self.animal.remove(animal, employee)
 
 # Тестирование
 
@@ -58,3 +82,5 @@ for animal in animals:
 
 for animal in animals:
     animal.eat()
+
+# Демонстрация композиции
